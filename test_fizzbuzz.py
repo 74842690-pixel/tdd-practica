@@ -3,6 +3,7 @@ from fizzbuzz.fizzbuzz import fizzbuzz
 
 
 class TestFizzBuzz(unittest.TestCase):
+
     def test_numero_normal(self):
         self.assertEqual(fizzbuzz(1), "1")
         self.assertEqual(fizzbuzz(2), "2")
@@ -23,10 +24,19 @@ class TestFizzBuzz(unittest.TestCase):
 
     def test_rango_completo(self):
         esperados = {
-            1: "1", 2: "2", 3: "Fizz", 4: "4", 5: "Buzz",
-            6: "Fizz", 10: "Buzz", 14: "14", 15: "FizzBuzz",
-            30: "FizzBuzz", 45: "FizzBuzz",
+            1: "1",
+            2: "2",
+            3: "Fizz",
+            4: "4",
+            5: "Buzz",
+            6: "Fizz",
+            10: "Buzz",
+            14: "14",
+            15: "FizzBuzz",
+            30: "FizzBuzz",
+            45: "FizzBuzz",
         }
+
         for n, esperado in esperados.items():
             with self.subTest(n=n):
                 self.assertEqual(fizzbuzz(n), esperado)
